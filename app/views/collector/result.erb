@@ -1,0 +1,32 @@
+<h1>result</h1>
+
+<table style="width:100%">
+  <tr>
+    <th>제목</th>
+    <th>부제목</th> 
+    <th>저자</th>
+    <th>출판사</th>
+    <th>분류</th>
+    <th>출간일</th>
+    <th>ISBN</th>
+    <th>정보링크</th>
+    <th>항목삭제</th>
+  </tr>
+  <% @outputbooksum.each do |x| %>
+  <tr>
+    <td><%= x.bookname %></td>
+    <td><%= x.booksubname %></td>
+    <td><%= x.authorname %></td>
+    <td><%= x.publisher %></td>
+    <td><%= x.categorize %></td>
+    <td><%= x.releasedate %></td>
+    <td><%= x.isbnnumber %></td>
+    <td><a href="<%= x.booklink %>"><%= x.booklink %></a></td>
+    <td><a href="/collector/delpost/<%= x.id %>">[[[[[항목삭제x]]]]]</a></td>
+  </tr>
+  <% end %>
+
+
+</table>
+
+<h1><a href='/'>back</a></h1>
